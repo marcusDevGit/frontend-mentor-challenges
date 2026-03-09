@@ -43,11 +43,11 @@ export default function Home() {
         <p>
           Feito por{" "}
           <a
-            href="https://github.com/marcus"
+            href="https://github.com/marcusDevGit"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Marcus
+            Marcus Phellypp
           </a>
         </p>
       </footer>

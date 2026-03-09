@@ -30,7 +30,7 @@ Todos os desafios são construídos na ordem **Mobile-First**:
 ## 💻 Como Rodar
 
 ```bash
-git clone https://github.com/marcus/frontend-mentor-challenges.git
+git clone https://github.com/marcusDevGit/frontend-mentor-challenges.git
 cd frontend-mentor-challenges
 npm install
 npm run dev
