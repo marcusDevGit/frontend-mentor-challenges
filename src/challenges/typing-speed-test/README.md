@@ -1,6 +1,6 @@
 # ⌨️ Typing Speed Test
 
-Desafio nível **Junior** do [Frontend Mentor](https://www.frontendmentor.io/challenges/typing-speed-test-tK-z0Mba-R).
+Desafio nível **Junior** do [Frontend Mentor](https://www.frontendmentor.io/challenges/typing-speed-test).
 
 ## Funcionalidades
 

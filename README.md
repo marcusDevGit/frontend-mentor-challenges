@@ -2,11 +2,13 @@
 
 Resoluções de desafios do [Frontend Mentor](https://www.frontendmentor.io/), construídos com **React** e **Vite**.
 
+🔗 **Live Site**: [marcusdevgit.github.io/frontend-mentor-challenges](https://marcusdevgit.github.io/frontend-mentor-challenges/)
+
 ## 🚀 Desafios
 
-| Desafio              | Dificuldade | Rota                   | Link                                                                                     |
-| :------------------- | :---------: | :--------------------- | :--------------------------------------------------------------------------------------- |
-| ⌨️ Typing Speed Test |   Junior    | `/#/typing-speed-test` | [Frontend Mentor](https://www.frontendmentor.io/challenges/typing-speed-test-tK-z0Mba-R) |
+| Desafio              | Dificuldade | Live                                                                                         | Link                                                                          |
+| :------------------- | :---------: | :------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------- |
+| ⌨️ Typing Speed Test |   Junior    | [Ver desafio](https://marcusdevgit.github.io/frontend-mentor-challenges/#/typing-speed-test) | [Frontend Mentor](https://www.frontendmentor.io/challenges/typing-speed-test) |
 
 ## 🏗️ Arquitetura
 
@@ -36,4 +38,4 @@ npm install
 npm run dev
 ```
 
-Acesse `http://localhost:5173/frontend-mentor-challenges/` para ver a página principal com os desafios.
+Acesse `http://localhost:5173/frontend-mentor-challenges/` para ver a página principal.
