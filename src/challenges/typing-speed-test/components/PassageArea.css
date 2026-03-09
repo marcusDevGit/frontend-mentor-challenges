@@ -1,0 +1,121 @@
+.tst-passage-area {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+}
+
+.tst-passage-text {
+    width: 100%;
+    flex: 1;
+}
+
+.tst-passage-text p {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.36;
+    letter-spacing: 0.4px;
+    color: var(--tst-neutral-0);
+    margin: 0;
+}
+
+.tst-passage-blurred p {
+    opacity: 0.4;
+    filter: blur(4px);
+    user-select: none;
+}
+
+.tst-start-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    z-index: 2;
+}
+
+.tst-start-btn {
+    background-color: var(--tst-blue-600);
+    color: var(--tst-neutral-0);
+    border: none;
+    border-radius: 100px;
+    padding: 0.875rem 2rem;
+    font-family: "Sora", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.tst-start-btn:hover {
+    background-color: var(--tst-blue-400);
+}
+
+.tst-start-btn:active {
+    transform: scale(0.97);
+}
+
+.tst-start-hint {
+    color: var(--tst-neutral-0);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .tst-passage-text p {
+        font-size: 2.5rem;
+        line-height: 1.36;
+    }
+
+    .tst-start-btn {
+        padding: 1rem 1.5rem;
+        font-size: 1.125rem;
+    }
+
+    .tst-start-hint {
+        font-size: 1.25rem;
+    }
+}
+
+.tst-char-correct {
+    color: #4ADE80;
+    /* Verde — acertou */
+}
+
+.tst-char-error {
+    color: #EF4444;
+    /* Vermelho — errou */
+    text-decoration: underline;
+    text-decoration-color: #EF4444;
+}
+
+.tst-char-cursor {
+    border-left: 2px solid #4CA6FF;
+    /* Barra azul piscante */
+    animation: blink 1s step-end infinite;
+    margin-left: -1px;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        border-color: #4CA6FF;
+    }
+
+    50% {
+        border-color: transparent;
+    }
+}
+
+.tst-start-btn:focus-visible {
+    outline: 2px solid #4CA6FF;
+    outline-offset: 2px;
+}

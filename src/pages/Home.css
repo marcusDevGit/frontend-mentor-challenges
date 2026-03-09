@@ -1,0 +1,129 @@
+.home-wrapper {
+    min-height: 100vh;
+    background: #0f0f13;
+    color: #f5f5f5;
+    font-family: "Inter", "Segoe UI", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1.5rem;
+}
+
+.home-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.home-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 0.75rem 0;
+    background: linear-gradient(135deg, #4CA6FF, #7C5CFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.home-subtitle {
+    font-size: 1rem;
+    color: #9e9ea7;
+    margin: 0;
+    max-width: 480px;
+}
+
+.home-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    width: 100%;
+    max-width: 720px;
+}
+
+.home-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    background: #1a1a23;
+    border: 1px solid #2a2a35;
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.home-card:hover {
+    border-color: #4CA6FF;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(76, 166, 255, 0.1);
+}
+
+.home-card:focus-visible {
+    outline: 2px solid #4CA6FF;
+    outline-offset: 2px;
+}
+
+.home-card-emoji {
+    font-size: 2.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.home-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.home-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    color: #f5f5f5;
+}
+
+.home-card-description {
+    font-size: 0.875rem;
+    color: #9e9ea7;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.home-card-badge {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #4CA6FF;
+    background: rgba(76, 166, 255, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.home-footer {
+    margin-top: auto;
+    padding-top: 3rem;
+    font-size: 0.875rem;
+    color: #5e5e6b;
+}
+
+.home-footer a {
+    color: #4CA6FF;
+    text-decoration: none;
+}
+
+.home-footer a:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 640px) {
+    .home-title {
+        font-size: 2.5rem;
+    }
+
+    .home-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

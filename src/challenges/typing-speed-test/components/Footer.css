@@ -1,0 +1,40 @@
+.tst-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.tst-restart-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: none;
+    color: var(--tst-neutral-400);
+    font-family: "Sora", sans-serif;
+    font-size: 0.875rem;
+    /* 14px */
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.tst-restart-btn:hover {
+    color: var(--tst-neutral-0);
+}
+
+.tst-restart-icon {
+    width: 16px;
+    height: 16px;
+    opacity: 0.7;
+}
+
+.tst-restart-btn:focus-visible {
+    outline: 2px solid #4CA6FF;
+    outline-offset: 2px;
+}
+
+.tst-restart-btn:hover .tst-restart-icon {
+    opacity: 1;
+}

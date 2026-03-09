@@ -1,0 +1,73 @@
+/* =============================================
+   HEADER - Mobile First (375px)
+   Apenas: Logo à esquerda + Best à direita
+   ============================================= */
+
+.tst-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tst-logo {
+    height: 32px;
+    width: 32px;
+}
+
+.tst-logo-small {
+    display: block;
+}
+
+.tst-logo-large {
+    display: none;
+}
+
+.tst-personal-best {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    /* 10px - spacing do Lunacy */
+    color: var(--tst-neutral-0);
+    font-size: 1rem;
+    /* 16px */
+}
+
+.tst-pb-icon {
+    width: 18px;
+    height: 16px;
+}
+
+.tst-personal-best span {
+    color: #949497;
+    /* Neutral 400 do Lunacy */
+    font-weight: 400;
+    letter-spacing: -0.48px;
+}
+
+.tst-personal-best strong {
+    color: var(--tst-neutral-0);
+    font-weight: 400;
+    /* Mesmo peso, só muda a cor */
+}
+
+/* =============================================
+   TABLET (768px)
+   ============================================= */
+
+@media (min-width: 768px) {
+    .tst-logo-small {
+        display: none;
+    }
+
+    .tst-logo-large {
+        display: block;
+        height: 39px;
+        width: auto;
+    }
+
+    .tst-personal-best {
+        font-size: 1.125rem;
+
+    }
+}
