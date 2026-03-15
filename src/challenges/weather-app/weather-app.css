@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700&family=DM+Sans:ital,wght@0,300;0,500;0,600;0,700;1,600&display=swap');
+
+/* ========================================
+   WRAPPER — define todas as variáveis
+   ======================================== */
+
+.wa-wrapper {
+    /* --- Cores (do style-guide.md) --- */
+    --wa-neutral-900: hsl(243, 96%, 9%);
+    --wa-neutral-800: hsl(243, 27%, 20%);
+    --wa-neutral-700: hsl(243, 23%, 24%);
+    --wa-neutral-600: hsl(243, 23%, 30%);
+    --wa-neutral-300: hsl(240, 6%, 70%);
+    --wa-neutral-200: hsl(250, 6%, 84%);
+    --wa-neutral-0: hsl(0, 0%, 100%);
+
+    --wa-orange-500: hsl(28, 100%, 52%);
+    --wa-blue-500: hsl(233, 67%, 56%);
+    --wa-blue-700: hsl(248, 70%, 36%);
+
+    /* --- Fontes --- */
+    --wa-font-body: 'DM Sans', sans-serif;
+    --wa-font-heading: 'Bricolage Grotesque', sans-serif;
+
+    /* --- Base --- */
+    font-family: var(--wa-font-body);
+    font-size: 18px;
+    background-color: var(--wa-neutral-900);
+    color: var(--wa-neutral-0);
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 1rem 3rem;
+    box-sizing: border-box;
+}
+
+.wa-wrapper,
+.wa-wrapper * {
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+
+/* ========================================
+   CONTAINER — largura máxima + espaçamento
+   ======================================== */
+
+.wa-container {
+    width: 100%;
+    max-width: 375px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* ========================================
+   TÍTULO PRINCIPAL
+   ======================================== */
+
+.wa-title {
+    font-family: var(--wa-font-heading);
+    font-size: 3.25rem;
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+    margin: 0;
+}
+
+/* ========================================
+   CONTEÚDO PRINCIPAL (abaixo do search)
+   ======================================== */
+
+/* ========================================
+   MAIN CONTENT — [Search + Weather] container
+   Lunacy: Main Content (spacing: 32)
+   ======================================== */
+
+.wa-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* ========================================
+   WEATHER INFO BLOCK — [CurrentWeather + Metrics]
+   Lunacy: Weather Info Container (spacing: 20)
+   ======================================== */
+
+.wa-weather-info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.wa-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* ========================================
+   RESET de margens internas
+   ======================================== */
+
+
+.wa-wrapper h2,
+.wa-wrapper h3,
+.wa-wrapper p {
+    margin: 0;
+}
+
+/* ========================================
+   ESTADOS: loading, error, no-results
+   ======================================== */
+
+.wa-loading,
+.wa-error,
+.wa-no-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.wa-error-icon {
+    width: 48px;
+    height: 48px;
+    opacity: 0.5;
+}
+
+.wa-error h2 {
+    font-family: var(--wa-font-heading);
+    font-size: 2rem;
+}
+
+.wa-error p {
+    color: var(--wa-neutral-300);
+    max-width: 320px;
+}
+
+.wa-retry-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    background-color: var(--wa-neutral-700);
+    color: var(--wa-neutral-0);
+    border: 1px solid var(--wa-neutral-600);
+    border-radius: 8px;
+    font-family: var(--wa-font-body);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.wa-retry-btn:hover {
+    background-color: var(--wa-neutral-600);
+}
+
+.wa-retry-btn img {
+    width: 16px;
+    height: 16px;
+}
+
+.wa-loading-dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.wa-loading-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--wa-neutral-300);
+    animation: wa-pulse 1.4s ease-in-out infinite;
+}
+
+.wa-loading-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.wa-loading-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes wa-pulse {
+
+    0%,
+    80%,
+    100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    40% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.wa-no-results h2 {
+    font-family: var(--wa-font-heading);
+    font-size: 1.5rem;
+}
+
+/* ========================================
+   RESPONSIVO — TABLET (768px-1279px)
+   ======================================== */
+
+@media (min-width: 768px) and (max-width: 1279px) {
+    .wa-wrapper {
+        padding: 24px 24px 80px;
+    }
+    .wa-wrapper p {
+    margin: 0;
+}
+
+    .wa-container {
+        max-width: 720px;
+    }
+
+    .wa-title {
+        max-width: 482px;
+        margin-inline: auto;
+    }
+}
+
+/* ========================================
+   RESPONSIVO — DESKTOP (1280px+)
+   ======================================== */
+
+@media (min-width: 1280px) {
+    .wa-wrapper {
+        padding-top: 48px;
+        padding-right: max(24px, calc((100vw - 1216px) / 2));
+        padding-bottom: 80px;
+        padding-left: max(24px, calc((100vw - 1216px) / 2));
+    }
+
+    .wa-container {
+        max-width: 1216px;
+        gap: 64px;
+    }
+
+    .wa-title {
+        max-width: 730px;
+        margin-inline: auto;
+        font-size: 52px;
+        line-height: 62px;
+        white-space: nowrap;
+    }
+
+    .wa-main {
+        gap: 48px;
+    }
+
+    .wa-main > .wa-search {
+        width: 656px;
+        max-width: 100%;
+        align-self: center;
+    }
+
+    .wa-content {
+        display: grid;
+        grid-template-columns: 800px 384px;
+        column-gap: 32px;
+        row-gap: 32px;
+        align-items: start;
+    }
+
+    .wa-weather-info-block {
+        grid-column: 1;
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .wa-daily {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .wa-hourly {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        align-self: start;
+    }
+}
+
+@media (max-width: 374px) {
+    .wa-wrapper {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .wa-title {
+        font-size: 2.8rem;
+    }
+}

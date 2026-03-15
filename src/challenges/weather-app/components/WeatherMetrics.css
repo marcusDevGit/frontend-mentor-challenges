@@ -1,0 +1,63 @@
+/* ========================================
+   WEATHER METRICS — Grade 2x2
+   Lunacy: Weather Details Container
+   ======================================== */
+
+.wa-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Cada card ocupa 50% da linha (menos o gap) */
+.wa-metric-card {
+  flex: 1 1 calc(50% - 8px);
+  min-width: 0;
+  background-color: var(--wa-neutral-700); /* #262540 */
+  border: 1px solid #3C3B5E;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+.wa-metric-label {
+  font-family: var(--wa-font-body);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--wa-neutral-200); /* #D4D3D9 */
+}
+
+.wa-metric-value {
+  font-family: var(--wa-font-body);
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--wa-neutral-0);
+  line-height: 1;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .wa-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .wa-metric-card {
+    min-height: 128px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .wa-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .wa-metric-card {
+    min-height: 128px;
+  }
+}

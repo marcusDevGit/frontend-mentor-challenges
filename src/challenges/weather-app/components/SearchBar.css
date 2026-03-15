@@ -1,0 +1,190 @@
+/* ========================================
+   SEARCH FORM — Container principal
+   ======================================== */
+
+.wa-search {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* --- Linha do input + botão --- */
+
+.wa-search-row {
+    display: flex;
+    flex-direction: column;
+    /* MOBILE: Empilha por padrão */
+    gap: 12px;
+}
+
+/* MOBILE FIRST */
+.wa-search-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px;
+    background-color: var(--wa-neutral-800);
+    border: 1px solid var(--wa-neutral-600);
+    border-radius: 12px;
+    flex: 1;
+}
+
+.wa-search-input-wrapper img {
+    width: 18px;
+    height: 18px;
+    opacity: 0.5;
+}
+
+.wa-search-input-wrapper input {
+    flex: 1;
+    min-width: 0;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--wa-neutral-0);
+    font-family: var(--wa-font-body);
+    font-size: 20px;
+    /* Tamanho mobile */
+}
+
+.wa-search-input-wrapper input::placeholder {
+    color: var(--wa-neutral-300);
+    font-size: 20px;
+    /* Tamanho mobile */
+}
+
+.wa-search-input-wrapper:focus-within {
+    border-color: var(--wa-blue-500);
+}
+
+/* MOBILE FIRST */
+.wa-search-btn {
+    padding: 16px 24px;
+    background-color: var(--wa-blue-500);
+    color: var(--wa-neutral-0);
+    border: none;
+    border-radius: 12px;
+    font-family: var(--wa-font-body);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.7;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.wa-search-btn:hover {
+    background-color: var(--wa-blue-700);
+}
+
+/* ========================================
+   SEARCH DROPDOWN — Resultados da busca
+   ======================================== */
+
+.wa-search-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background-color: var(--wa-neutral-800);
+    border: 1px solid var(--wa-neutral-600);
+    border-radius: 12px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 999;
+}
+
+.wa-search-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px;
+    color: var(--wa-neutral-300);
+    font-family: var(--wa-font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.wa-search-status img {
+    width: 16px;
+    height: 16px;
+    opacity: 0.7;
+}
+
+.wa-search-status--not-found {
+    color: var(--wa-neutral-200);
+}
+
+.wa-search-status--error {
+    color: var(--wa-orange-500);
+}
+
+.wa-search-result {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--wa-neutral-700);
+    color: var(--wa-neutral-200);
+    font-family: var(--wa-font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.wa-search-result:last-child {
+    border-bottom: none;
+}
+
+.wa-search-result:hover {
+    background-color: var(--wa-neutral-700);
+    color: var(--wa-neutral-0);
+}
+
+/* --- (Dropdown e Animations podem ficar idênticos, adicione só o MediaQuery:) --- */
+
+/* ======================================================== */
+/* TABLET overrides (768px-1279px)                           */
+/* ======================================================== */
+@media (min-width: 768px) and (max-width: 1279px) {
+    .wa-search-row {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .wa-search-btn {
+        flex: 0 0 114px;
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 500;
+    }
+}
+
+/* ======================================================== */
+/* DESKTOP overrides (Telas a partir de 1280px)             */
+/* ======================================================== */
+@media (min-width: 1280px) {
+    .wa-search-row {
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .wa-search-input-wrapper {
+        flex: 0 0 526px;
+    }
+
+    .wa-search-btn {
+        flex: 0 0 114px;
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 500;
+    }
+}

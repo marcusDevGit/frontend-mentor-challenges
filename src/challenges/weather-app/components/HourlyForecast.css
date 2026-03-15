@@ -1,0 +1,220 @@
+/* ========================================
+   HOURLY FORECAST
+   Lunacy: Hourly Forecast Container
+   ======================================== */
+
+/* Container principal — bg #262540, radius 20px */
+.wa-hourly {
+  background-color: var(--wa-neutral-700);
+  border-radius: 20px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* --- Header (título + dropdown) --- */
+.wa-hourly-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* DMSans-SemiBold 20px */
+.wa-hourly-title {
+  font-family: var(--wa-font-body);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--wa-neutral-0);
+  margin: 0;
+  line-height: 24px;
+}
+
+/* --- Dropdown de seleção de dia --- */
+.wa-hourly-dropdown-wrapper {
+  position: relative;
+}
+
+/* Lunacy: bg #3C3B5E, radius 8px, padding 8px 16px */
+.wa-hourly-dropdown-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background-color: #3c3b5e;
+  border: none;
+  border-radius: 8px;
+  color: var(--wa-neutral-0);
+  font-family: var(--wa-font-body);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.wa-hourly-dropdown-btn:hover {
+  background-color: var(--wa-neutral-600);
+}
+
+.wa-hourly-chevron {
+  width: 12px;
+  height: 12px;
+  transition: transform 0.2s;
+}
+
+.wa-hourly-chevron.open {
+  transform: rotate(180deg);
+}
+
+.wa-hourly-day-list {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background-color: var(--wa-neutral-800);
+  border: 1px solid #3c3b5e;
+  border-radius: 8px;
+  padding: 6px 0;
+  min-width: 140px;
+  list-style: none;
+  margin: 0;
+  z-index: 100;
+}
+
+.wa-hourly-day-option {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  color: var(--wa-neutral-200);
+  font-family: var(--wa-font-body);
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.wa-hourly-day-option:hover {
+  background-color: var(--wa-neutral-700);
+  color: var(--wa-neutral-0);
+}
+
+.wa-hourly-day-option--active {
+  color: var(--wa-neutral-0);
+}
+
+/* --- Cards por hora ---
+   Lunacy: bg #302F4A, border #3C3B5E, h: 60px */
+.wa-hourly-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wa-hourly-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px 10px 12px;
+  background-color: #302f4a;
+  border: 1px solid #3c3b5e;
+  border-radius: 12px;
+  min-height: 60px;
+  box-sizing: border-box;
+}
+
+/* Hora — alinhada à esquerda, largura fixa para colunas alinhadas */
+.wa-hourly-time {
+  font-family: var(--wa-font-body);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--wa-neutral-200);
+  min-width: 64px;
+}
+
+.wa-hourly-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Temperatura empurrada para a direita */
+.wa-hourly-temp {
+  font-family: var(--wa-font-body);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--wa-neutral-0);
+  margin-left: auto;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .wa-hourly {
+    padding: 24px;
+  }
+
+  .wa-hourly-dropdown-btn {
+    width: 210px;
+    justify-content: space-between;
+  }
+
+  .wa-hourly-time {
+    flex: 1;
+    min-width: 0;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--wa-neutral-0);
+  }
+
+  .wa-hourly-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .wa-hourly {
+    padding: 24px;
+    min-height: 694px;
+  }
+
+  .wa-hourly-dropdown-btn {
+    width: 210px;
+    justify-content: space-between;
+  }
+
+  .wa-hourly-time {
+    flex: 1;
+    min-width: 0;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--wa-neutral-0);
+  }
+
+  .wa-hourly-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 374px) {
+  .wa-hourly-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .wa-hourly-dropdown-btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .wa-hourly-day-list {
+    left: 0;
+    right: 0;
+    min-width: 0;
+  }
+}
