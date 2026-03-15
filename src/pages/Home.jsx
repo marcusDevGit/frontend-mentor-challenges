@@ -10,6 +10,14 @@ const CHALLENGES = [
     description:
       "App de teste de digitação com WPM em tempo real, timer e personal best.",
   },
+  {
+    slug: "weather-app",
+    title: "Weather App",
+    emoji: "🌤️",
+    difficulty: "Intermediate",
+    description:
+      "Previsão do tempo atual e para os próximos dias usando a Open-Meteo API.",
+  },
 ];
 
 export default function Home() {

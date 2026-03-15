@@ -1,0 +1,236 @@
+/* ========================================
+   HEADER — Container principal
+   ======================================== */
+
+.wa-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    gap: 1rem;
+    width: 100%;
+}
+
+/* ========================================
+   LOGO — Ícone + Texto
+   ======================================== */
+
+.wa-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.wa-logo img {
+    width: auto;
+    height: 28px;
+}
+
+.wa-logo span {
+    font-family: var(--wa-font-heading);
+    font-size: 15.4px;
+    font-weight: 700;
+    color: var(--wa-neutral-0);
+    white-space: nowrap;
+}
+
+/* ========================================
+   UNITS WRAPPER — Container do dropdown
+   ======================================== */
+
+.wa-units-wrapper {
+    position: relative;
+}
+
+/* MOBILE FIRST */
+.wa-units-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Gap menor no celular */
+    padding: 8px 12px;
+    width: 170px;
+    justify-content: flex-start;
+    /* Altura confortável para o toque (Touch Target) */
+    background-color: var(--wa-neutral-700);
+    color: var(--wa-neutral-0);
+    border: 1px solid var(--wa-neutral-600);
+    border-radius: 6px;
+    font-family: var(--wa-font-body);
+    font-size: 14px;
+    /* Fonte reduzida para celular */
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.wa-units-btn:hover {
+    background-color: var(--wa-neutral-600);
+}
+
+.wa-units-btn img {
+    width: 16px;
+    height: 16px;
+}
+
+.wa-units-btn .wa-chevron {
+    width: 10px;
+    height: 10px;
+    transition: transform 0.2s;
+}
+
+.wa-units-btn .wa-chevron.open {
+    transform: rotate(180deg);
+}
+
+/* ========================================
+   UNITS MENU — Dropdown menu
+   ======================================== */
+
+.wa-units-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background-color: var(--wa-neutral-800);
+    border: 1px solid var(--wa-neutral-600);
+    border-radius: 8px;
+    padding: 16px 0;
+    min-width: 280px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+}
+
+.wa-units-menu-title {
+    padding: 0 16px;
+    color: var(--wa-neutral-300);
+    font-family: var(--wa-font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin: 0 0 12px 0;
+}
+
+.wa-units-divider {
+    height: 1px;
+    background-color: var(--wa-neutral-600);
+    margin: 12px 0;
+}
+
+.wa-units-menu-label {
+    padding: 0 16px;
+    color: var(--wa-neutral-300);
+    font-family: var(--wa-font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 8px 0;
+}
+
+.wa-units-menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    color: var(--wa-neutral-200);
+    font-family: var(--wa-font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.wa-units-menu-item:hover {
+    background-color: var(--wa-neutral-700);
+    color: var(--wa-neutral-0);
+}
+
+.wa-units-menu-item img {
+    width: 16px;
+    height: 16px;
+}
+
+/* Resto do Menu... (Pode manter o restante de Header.css igual, apenas adicione as Medias:) */
+
+/* ======================================================== */
+/* TABLET overrides (768px-1279px)                           */
+/* ======================================================== */
+@media (min-width: 768px) and (max-width: 1279px) {
+    .wa-header {
+        min-height: 46px;
+    }
+
+    .wa-logo img {
+        height: 40px;
+    }
+
+    .wa-units-btn {
+        width: 222px;
+        height: 46px;
+        padding: 13px 16px;
+        gap: 10px;
+        border-radius: 8px;
+        font-size: 16px;
+    }
+
+    .wa-units-btn .wa-chevron {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* ======================================================== */
+/* DESKTOP overrides (Telas a partir de 1280px)             */
+/* ======================================================== */
+@media (min-width: 1280px) {
+    .wa-header {
+        min-height: 46px;
+    }
+
+    .wa-logo img {
+        height: 40px;
+    }
+
+    .wa-units-btn {
+        width: 222px;
+        height: 46px;
+        gap: 10px;
+        padding: 13px 16px;
+        border-radius: 8px;
+        font-size: 16px;
+    }
+
+    .wa-units-btn .wa-chevron {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+@media (max-width: 374px) {
+  
+
+    .wa-logo {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .wa-logo img {
+        width: 100%;
+        max-width: 138px;
+        height: auto;
+    }
+
+    .wa-units-btn {
+        width: auto;
+        min-width: 136px;
+        gap: 6px;
+        padding: 8px 10px;
+    }
+
+    .wa-units-menu {
+        min-width: 240px;
+        max-width: calc(100vw - 24px);
+    }
+}

@@ -1,0 +1,116 @@
+/* ========================================
+   DAILY FORECAST
+   Lunacy: Daily Forecast Container
+   ======================================== */
+
+.wa-daily {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wa-daily-title {
+  font-family: var(--wa-font-body);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--wa-neutral-0);
+  margin: 0;
+  line-height: 24px;
+}
+
+/* 3 cards por linha com wrap — Lunacy: gap 16px */
+.wa-daily-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* flex: 1 1 calc(33.333% - 11px) → cada card ocupa ~1/3 da linha */
+.wa-daily-card {
+  flex: 1 1 calc(33.333% - 11px);
+  min-width: 0;
+  background-color: var(--wa-neutral-700);
+  border: 1px solid #3c3b5e;
+  border-radius: 12px;
+  padding: 16px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+.wa-daily-card:hover {
+  background-color: var(--wa-neutral-600);
+}
+
+/* Dia selecionado — borda azul */
+.wa-daily-card--active {
+  border-color: var(--wa-blue-500);
+  background-color: var(--wa-neutral-600);
+}
+
+/* DMSans-Medium 18px — Lunacy: Day Label */
+.wa-daily-day {
+  font-family: var(--wa-font-body);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--wa-neutral-0);
+  line-height: 21.6px;
+}
+
+/* scale 0.75 do ícone original → ~60px */
+.wa-daily-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* Min/Max nas extremidades — Lunacy: justify space-between */
+.wa-daily-temps {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-family: var(--wa-font-body);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.2px;
+}
+
+/* Max → branco | Min → neutro 200 (#D4D3D9) */
+.wa-daily-temp-max {
+  color: var(--wa-neutral-0);
+}
+
+.wa-daily-temp-min {
+  color: var(--wa-neutral-200);
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .wa-daily-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .wa-daily-card {
+    flex: initial;
+    min-height: 165px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .wa-daily-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .wa-daily-card {
+    flex: initial;
+    min-height: 165px;
+  }
+}
